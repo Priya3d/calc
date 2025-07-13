@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Distraction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Distraction Recorded!</h1>
+
+    <p><strong>Distraction:</strong> {{ distraction }}</p>
+    <p><strong>Time Wasted:</strong> {{ minutes }} minutes</p>
+    <p><strong>Reason:</strong> {{ reason }}</p>
+    <p><strong>Estimated Cost:</strong> ₹{{cost }}</p>
+    <p><em>{{ quote }}</em></p>
+
+    
+
+    <a href="/">Back to Calculator</a> |
+     <a href="/history">View History</a>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Distraction History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Distraction History</h1>
+
+    {% if distractions %}
+        <table>
+            <tr>
+                <th>Distraction</th>
+                <th>Minutes</th>
+                <th>Reason</th>
+                <th>Cost (₹)</th>
+            </tr>
+            {% for row in distractions %}
+            <tr>
+                <td>{{ row['Distraction'] }}</td>
+                <td>{{ row['Minutes'] }}</td>
+                <td>{{ row['Reason'] }}</td>
+                <td>{{ row['Cost'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No distractions recorded yet.</p>
+    {% endif %}
+
+    <br>
+    <a href="/">Back to Calculator</a>
+    <br><br>
+<a href="/download" style="font-weight: bold; color: blue; text-decoration: underline;">
+  Download Distraction Report as PDF
+</a>
+</body>
+</html>
