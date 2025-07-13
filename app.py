@@ -15,6 +15,9 @@ quotes = [
     "Your future is created by what you do today, not tomorrow.",
     "Cut off distractions. Connect to your vision."
 ]
+@app.route('/history')
+def view_history():
+    return "<h2>History feature coming soon!</h2><p>We'll record your distractions here later.</p>"
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
